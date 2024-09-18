@@ -51,7 +51,7 @@ app.post('/sendCallNotification', async (req, res) => {
     await sendFCMMessage(message);
     return res.status(200).send({ success: true, message: 'FCM message sent' });
   } catch (error) {
-    return res.status(500).send({ error: 'Failed to send FCM message' });
+    return res.status(500).send({ error: `Failed to send FCM message ${error}` });
   }
 });
 
